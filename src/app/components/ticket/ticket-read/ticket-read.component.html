@@ -1,0 +1,83 @@
+<div class="container mat-elevation-z8">
+    <h1 class="full-width">Leitura de ticket</h1>
+    <img class="full-width" src="assets/img/ticket-create.svg" alt="Ticket image">
+ 
+    <form class="form">
+       <mat-form-field class="full-width" appearance="outline">
+         <mat-label>Título do ticket</mat-label>
+         <input 
+         [disabled]="true"
+         [(ngModel)]="ticket.titulo"
+         name="titulo"
+         matInput 
+         placeholder="Ex. Trocar bateria de notebook">
+       </mat-form-field>
+     </form>
+ 
+     <div class="status-priorite">
+       <mat-form-field appearance="outline">
+          <mat-label>STATUS ({{ retornaStatus(ticket.status) }})</mat-label>
+          <mat-select 
+          [disabled]="true"
+          [(ngModel)]="ticket.status"
+          name="status">
+            <mat-option value="0">OUVERT</mat-option>
+            <mat-option value="1">EM EN COURS</mat-option>
+            <mat-option value="2">FERMÉE</mat-option>
+          </mat-select>
+        </mat-form-field>
+ 
+        <mat-form-field appearance="outline">
+          <mat-label>PRIORIDADE ({{ retornaPrioridade(ticket.priorite) }})</mat-label>
+          <mat-select 
+          [disabled]="true"
+          [(ngModel)]="ticket.priorite"
+          name="priorite">
+            <mat-option value="0">BAIXA</mat-option>
+            <mat-option value="1">MÉDIA</mat-option>
+            <mat-option value="2">ALTA</mat-option>
+          </mat-select>
+        </mat-form-field>
+     </div>
+ 
+     <div class="technicien">
+       <mat-form-field class="full-width" appearance="outline">
+          <mat-label>TÉCNICO ({{ ticket.nomeTechnicien }})</mat-label>
+          <mat-select 
+          [disabled]="true"
+          [(ngModel)]="ticket.technicien"
+          name="technicien">
+            <mat-option>{{ ticket.nomeTechnicien }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+     </div>
+ 
+     <div class="cliente">
+       <mat-form-field class="full-width" appearance="outline">
+          <mat-label>CLIENTE ({{ ticket.nomeCliente }})</mat-label>
+          <mat-select 
+          [disabled]="true"
+          [(ngModel)]="ticket.cliente"
+          name="cliente">
+            <mat-option>{{ ticket.nomeCliente }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+     </div>
+ 
+     <form class="form">  
+       <mat-form-field class="full-width" appearance="outline">
+         <mat-label>Deixe uma observação</mat-label>
+         <textarea 
+         [disabled]="true"
+         [(ngModel)]="ticket.observacoes"
+         name="observacoes"
+         class="observacoes" 
+         matInput 
+         ></textarea>
+       </mat-form-field>
+     </form>
+ 
+     <button routerLink="../../" class="full-width mat-elevation-z4" mat-stroked-button color="warn">Retornar</button>
+ 
+     <p class="full-width">Desnvolvido por George HABDELKARIM ELHALLOUMI & OMAR AITOGRAM</p>
+ </div>

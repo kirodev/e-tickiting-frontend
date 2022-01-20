@@ -1,0 +1,32 @@
+<div class="container">
+    <form class="form mat-elevation-z8">
+        <h1>Help Desk - Dicas de um DEV</h1>
+        <img src="assets/img/login-image.svg" alt="" srcset="">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>E-mail</mat-label>
+          <input 
+            [formControl]="email"
+            required
+            [(ngModel)]="admins.email" 
+            name="email" 
+            matInput 
+            placeholder="Ex. fulano@mail.com">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input 
+                [formControl]="password"
+                required 
+                [(ngModel)]="admins.password" 
+                name="password" 
+                matInput 
+                placeholder="Ex. 123" type="password">
+          </mat-form-field>  
+          <button 
+            [disabled]="!validaCampos()"
+            (click)="logar()"
+            class="full-width mat-elevation-z4" 
+            mat-stroked-button color="primary">Login</button>
+    </form>      
+</div>

@@ -1,0 +1,60 @@
+<div class="container mat-elevation-z8">
+    <form class="form">
+ 
+       <h1 class="fullWidth">Deletar Technicien</h1>
+       <img class="fullWidth" src="assets/img/technicien-create.svg" alt="Help Desk - Dicas de um DEV">
+ 
+       <section class="section">
+          <mat-checkbox [disabled]="true" class="margin" color="primary">Credenciais</mat-checkbox>
+          <mat-checkbox [disabled]="true" class="margin" color="primary">Cliente</mat-checkbox>
+          <mat-checkbox [disabled]="true" class="margin" color="primary">Technicien</mat-checkbox>
+        </section>
+ 
+        <mat-form-field class="fullWidth" appearance="legacy">
+          <mat-label>Nome</mat-label>
+          <input 
+          [(ngModel)]="technicien.nome"
+          name="nome"
+          [disabled]="true"
+          matInput 
+          >
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        
+        <mat-form-field class="fullWidth" appearance="legacy">
+          <mat-label>TEL</mat-label>
+          <input 
+          [(ngModel)]="technicien.tel"
+          name="tel"
+          [disabled]="true"
+          matInput >
+          <mat-icon matSuffix>pin </mat-icon>
+        </mat-form-field>
+ 
+        <mat-form-field class="fullWidth" appearance="legacy">
+          <mat-label>E-mail</mat-label>
+          <input 
+          [(ngModel)]="technicien.email"
+          name="email"
+          [disabled]="true"
+          matInput >
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+ 
+        <mat-form-field class="fullWidth" appearance="legacy">
+          <mat-label>Password</mat-label>
+          <input 
+          [(ngModel)]="technicien.password"
+          name="password"
+          [disabled]="true"
+          matInput 
+          type="password">
+          <mat-icon matSuffix>password</mat-icon>
+        </mat-form-field>
+ 
+        <button (click)="delete()" class="fullWidth mat-elevation-z4" mat-flat-button color="primary">Deletar</button>
+        <button routerLink="../../" class="fullWidth mat-elevation-z4" mat-stroked-button color="warn">Annuler</button>
+    </form>
+ 
+    <p class="fullWidth">by George HABDELKARIM ELHALLOUMI & OMAR AITOGRAM</p>
+ </div>
